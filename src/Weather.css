@@ -24,6 +24,11 @@
   border-radius: 10px 0 0 10px;
   color: var(--basic-blue-color);
   opacity: 0.8;
+  font-weight: 600;
+}
+
+.Weather .searchInput:focus{
+    outline: 1px solid var(--basic-blue-color);
 }
 
 .Weather .submitInput {
