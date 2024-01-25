@@ -4,7 +4,7 @@ import "./Weather.css";
 
 export default function Weather() {
   return (
-    <div className="Weather p-5">
+    <div className="Weather p-5 mt-5">
       <div className="row d-flex justify-content-between">
         <div className="col-6">
           <h1 className="m-0 city">Tehran</h1>
