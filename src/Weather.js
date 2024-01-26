@@ -82,7 +82,7 @@ export default function Weather() {
                     alt="weather icon"
                   />
                   {"  "}
-                  Feels like: {weatherData.feelsLike} °C
+                  Feels like: {Math.round(weatherData.feelsLike)} °C
                 </li>
                 <li>
                   <img
