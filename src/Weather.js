@@ -63,7 +63,7 @@ export default function Weather() {
             </div>
             <div className="col-8 m-3 p-3 description-unit">
               <div className="row unit">°C | °F</div>
-              <div className="row description">{weatherData.description}</div>
+              <div className="row text-capitalize description">{weatherData.description}</div>
             </div>
           </div>
           <div className="col-6 d-flex justify-content-evenly align-items-center">
