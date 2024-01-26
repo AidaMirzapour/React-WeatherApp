@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import PulseLoader from "react-spinners/PulseLoader";
+import FormattedDateAndHour from "./FormattedDateAndHour";
 import "./Weather.css";
 
 export default function Weather() {
@@ -17,6 +18,7 @@ export default function Weather() {
       wind: response.data.wind.speed,
       feelsLike: response.data.temperature.feels_like,
       iconUrl: response.data.condition.icon_url,
+      date: new Date(response.data.time * 1000),
     });
   }
 
@@ -37,7 +39,9 @@ export default function Weather() {
         <div className="row d-flex justify-content-between">
           <div className="col-6">
             <h1 className="m-0 city">{weatherData.city}</h1>
-            <p className="m-0 date">Thursday, 31 August 2023 | 10:15 PM</p>
+            <div className="m-0 date">
+              <FormattedDateAndHour date={weatherData.date} />
+            </div>
           </div>
           <div className="col-6 d-flex align-items-center justify-content-center">
             <form onSubmit={handleSubmit}>
@@ -63,7 +67,9 @@ export default function Weather() {
             </div>
             <div className="col-8 m-3 p-3 description-unit">
               <div className="row unit">°C | °F</div>
-              <div className="row text-capitalize description">{weatherData.description}</div>
+              <div className="row text-capitalize description">
+                {weatherData.description}
+              </div>
             </div>
           </div>
           <div className="col-6 d-flex justify-content-evenly align-items-center">
