@@ -1,5 +1,7 @@
 .WeatherInfo .temperature {
   font-size: 80px;
+  margin-right: 20px;
+  text-align: center;
 }
 
 .WeatherInfo .description {
