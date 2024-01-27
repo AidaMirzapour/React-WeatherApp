@@ -1,4 +1,5 @@
 import React from "react";
+import WeatherIcon from "./WeatherIcons";
 import "./WeatherInfo.css"
 
 export default function WeatherInfo(props) {
@@ -18,11 +19,11 @@ export default function WeatherInfo(props) {
         </div>
         <div className="col-6 d-flex justify-content-evenly align-items-center">
           <div className="col-5">
-            <img
-              src={props.info.iconUrl}
-              alt="weather icon"
-              className="img-fluid image-icon"
+            <WeatherIcon
+              icon={props.info.icon}
+              alt={props.info.description}
             />
+            
           </div>
           <div className="col-7">
             <ul className="details">

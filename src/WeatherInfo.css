@@ -9,10 +9,6 @@
   font-weight: 500;
 }
 
-.WeatherInfo .image-icon {
-  width: 200px;
-}
-
 .WeatherInfo .details {
   list-style: none;
   font-size: 14px;
