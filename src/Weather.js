@@ -5,8 +5,8 @@ import FormattedDateAndHour from "./FormattedDateAndHour";
 import WeatherInfo from "./WeatherInfo";
 import "./Weather.css";
 
-export default function Weather() {
-  const [city, setCity] = useState(null);
+export default function Weather(props) {
+  const [city, setCity] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ ready: false });
 
   function getData(response) {
@@ -23,11 +23,15 @@ export default function Weather() {
     });
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
+  function callApi(){
     const apiKey = "3t3727bff68c9c7b7704eb1fo7a5d0e1";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(getData);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    callApi();
   }
 
   function getCity(event) {
@@ -65,35 +69,18 @@ export default function Weather() {
       </div>
     );
   } else {
+    callApi();
     return (
-      <div className="Weather p-5 mt-5">
-        <div className="row text-center">
-          <form onSubmit={handleSubmit}>
-            <input
-              type="search"
-              onChange={getCity}
-              placeholder="Enter a city..."
-              className="searchInput"
-              autoFocus="on"
-            ></input>
-            <input
-              type="submit"
-              value={"Search"}
-              className="submitInput"
-            ></input>
-          </form>
-        </div>
-        <div className="loader mt-5">
-          <PulseLoader
-            size={15}
-            cssOverride={{
-              "text-align": "center",
-            }}
-            color="rgb(23, 36, 154)"
-            loading={true}
-            speedMultiplier={1}
-          />
-        </div>
+      <div className="loader mt-5">
+        <PulseLoader
+          size={15}
+          cssOverride={{
+            "text-align": "center",
+          }}
+          color="rgb(23, 36, 154)"
+          loading={true}
+          speedMultiplier={1}
+        />
       </div>
     );
   }
