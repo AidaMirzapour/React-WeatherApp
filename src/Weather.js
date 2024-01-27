@@ -35,7 +35,7 @@ export default function Weather() {
 
   if (weatherData.ready) {
     return (
-      <div className="Weather p-5 mt-5">
+      <div className="Weather p-4 mt-5">
         <div className="row d-flex justify-content-between">
           <div className="col-6">
             <h1 className="m-0 city">{weatherData.city}</h1>
@@ -49,13 +49,13 @@ export default function Weather() {
                 type="search"
                 onChange={getCity}
                 placeholder="Enter a city..."
-                className="searchInput"
+                className="searchInput col-6"
                 autoFocus="on"
               ></input>
               <input
                 type="submit"
                 value={"Search"}
-                className="submitInput"
+                className="submitInput col-4"
               ></input>
             </form>
           </div>

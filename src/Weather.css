@@ -4,7 +4,7 @@
 
 .Weather {
   background-image: url(/images/day-sky.jpg);
-  width: 800px;
+  max-width: 800px;
   border-radius: 25px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
   color: white;
@@ -16,15 +16,16 @@
 }
 
 .Weather input {
-  padding: 7px 12px;
+  padding: 7px 10px;
   border: none;
 }
 
 .Weather .searchInput {
   border-radius: 10px 0 0 10px;
   color: var(--basic-blue-color);
-  opacity: 0.8;
+  opacity: 0.7;
   font-weight: 600;
+  box-sizing: content-box;
 }
 
 .Weather .searchInput:focus {
