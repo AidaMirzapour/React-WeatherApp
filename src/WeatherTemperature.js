@@ -20,11 +20,11 @@ export default function WeatherTemperature(props) {
         <div className="col-4 ml-2 temperature">{Math.round(props.temp)}</div>
         <div className="col-8 m-3 ps-2 description-unit">
           <div className="row unit ">
-            <a href="#" onClick={convertToCelsius}>
+            <a href="/" onClick={convertToCelsius}>
               °C{" "}
             </a>
             |
-            <a href="#" onClick={convertToFahrenheit} className="text-muted ">
+            <a href="/" onClick={convertToFahrenheit} className="text-muted ">
               {" "}
               °F
             </a>
@@ -40,11 +40,11 @@ export default function WeatherTemperature(props) {
         <div className="col-4 ml-2 temperature">{Math.round(Fahrenheit)}</div>
         <div className="col-8 m-3 ps-2 description-unit">
           <div className="row unit">
-            <a href="#" onClick={convertToCelsius} className="text-muted">
+            <a href="/" onClick={convertToCelsius} className="text-muted">
               °C{" "}
             </a>
             |
-            <a href="#" onClick={convertToFahrenheit}>
+            <a href="/" onClick={convertToFahrenheit}>
               {" "}
               °F
             </a>
