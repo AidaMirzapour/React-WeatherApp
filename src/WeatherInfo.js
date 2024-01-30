@@ -1,29 +1,18 @@
 import React from "react";
 import WeatherIcon from "./WeatherIcons";
-import "./WeatherInfo.css"
+import WeatherTemperature from "./WeatherTemperature";
+import "./WeatherInfo.css";
 
 export default function WeatherInfo(props) {
   return (
     <div className="WeatherInfo">
       <div className="row mt-5 mb-5 d-flex justify-content-between">
         <div className="col-6 d-flex ">
-          <div className="col-3 temperature">
-            {Math.round(props.info.temperature)}
-          </div>
-          <div className="col-8 m-3 p-3 description-unit">
-            <div className="row unit">°C | °F</div>
-            <div className="row text-capitalize description">
-              {props.info.description}
-            </div>
-          </div>
+          <WeatherTemperature temp={props.info.temperature} desc={props.info.description} />
         </div>
         <div className="col-6 d-flex justify-content-evenly align-items-center">
           <div className="col-5">
-            <WeatherIcon
-              icon={props.info.icon}
-              alt={props.info.description}
-            />
-            
+            <WeatherIcon icon={props.info.icon} alt={props.info.description} />
           </div>
           <div className="col-7">
             <ul className="details">
