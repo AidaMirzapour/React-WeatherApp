@@ -8,14 +8,17 @@ export default function WeatherInfo(props) {
     <div className="WeatherInfo">
       <div className="row mt-5 mb-5 d-flex justify-content-between">
         <div className="col-6 d-flex ">
-          <WeatherTemperature temp={props.info.temperature} desc={props.info.description} />
+          <WeatherTemperature
+            temp={props.info.temperature}
+            desc={props.info.description}
+          />
         </div>
         <div className="col-6 d-flex justify-content-evenly align-items-center">
           <div className="col-5">
             <WeatherIcon icon={props.info.icon} alt={props.info.description} />
           </div>
           <div className="col-7">
-            <ul className="details">
+            <ul className="details ms-3">
               <li>
                 <img
                   src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAsUlEQVR4nMXQsWoCQRDG8UvhpRFEJJDCh7BQgq1YmCZFkrewj5YKgrFWO6t7jXu4nyxscRwJrneFA8POfLvz34/Jsn8CC+xxwDy7N/BbqfdNACWWsd40BYzaAlYxyyaAAsM2Dgq8tgGUj1siXmoOfoKWOtzBGd3YP2OKE/IUwDfGlf4Jk5hfKYB1+LWmvWMW7lIAH3iraZ8RkuQgxxG9itbDJeznJiAO9LHFrnIO/np8Bf2s4+UAGxtVAAAAAElFTkSuQmCC"
