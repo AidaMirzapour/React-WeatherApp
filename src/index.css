@@ -6,4 +6,6 @@ body {
   align-items: center;
   background-image: url(/images/background.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
