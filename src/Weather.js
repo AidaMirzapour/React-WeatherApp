@@ -3,6 +3,7 @@ import axios from "axios";
 import PulseLoader from "react-spinners/PulseLoader";
 import FormattedDateAndHour from "./FormattedDateAndHour";
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -23,7 +24,7 @@ export default function Weather(props) {
     });
   }
 
-  function callApi(){
+  function callApi() {
     const apiKey = "3t3727bff68c9c7b7704eb1fo7a5d0e1";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(getData);
@@ -66,6 +67,7 @@ export default function Weather(props) {
           </div>
         </div>
         <WeatherInfo info={weatherData} />
+        <WeatherForecast info={weatherData} />
       </div>
     );
   } else {
