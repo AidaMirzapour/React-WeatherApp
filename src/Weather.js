@@ -21,6 +21,8 @@ export default function Weather(props) {
       feelsLike: response.data.temperature.feels_like,
       icon: response.data.condition.icon,
       date: new Date(response.data.time * 1000),
+      longitude: response.data.coordinates.longitude,
+      latitude: response.data.coordinates.latitude,
     });
   }
 
@@ -67,7 +69,11 @@ export default function Weather(props) {
           </div>
         </div>
         <WeatherInfo info={weatherData} />
-        <WeatherForecast info={weatherData} />
+        <WeatherForecast
+          lon={weatherData.longitude}
+          lat={weatherData.latitude}
+          date={weatherData.date}
+        />
       </div>
     );
   } else {
