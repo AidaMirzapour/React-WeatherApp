@@ -10,7 +10,7 @@ export default function WeatherForecast(props) {
     setLoaded(false);
   }, [props]);
 
-  function getAPIResponse(response) { debugger;
+  function getAPIResponse(response) {
     setLoaded(true);
     setForecastData(response.data.daily);
   }
@@ -27,7 +27,7 @@ export default function WeatherForecast(props) {
     return (
       <div className="WeatherForecast row">
         {forecastData.map(function (dailyForecast, index) {
-          if (index !== 0 ) {
+          if (index !== 0) {
             return (
               <div className="forecastDays col-2 text-center" key={index}>
                 <WeatherDailyForecast data={dailyForecast} />
