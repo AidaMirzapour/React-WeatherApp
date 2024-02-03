@@ -1,5 +1,6 @@
 import React from "react";
 import WeatherIcon from "./WeatherIcons";
+import "./WeatherDailyForecast.css";
 
 export default function WeatherDailyForecast(props) {
   let minTemp = props.data.temperature.minimum;
