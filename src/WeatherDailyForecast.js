@@ -18,7 +18,10 @@ export default function WeatherDailyForecast(props) {
   return (
     <div className="WeatherDailyForecast">
       <div className="forecastDayName">{getForecastDay()}</div>
-      <WeatherIcon icon={forecastIcon} className="m-0" />
+      <div className="WeatherIcon">
+        <WeatherIcon icon={forecastIcon} className="m-0" />
+      </div>
+
       <div className="forecastTemperature">
         <span className="forecastTemperature-max">{Math.round(maxTemp)}° </span>
         -
