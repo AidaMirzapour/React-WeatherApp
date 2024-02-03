@@ -1,26 +1,18 @@
-import React, { useState } from "react";
-import WeatherIcon from "./WeatherIcons";
+import React, { useEffect, useState } from "react";
+import WeatherDailyForecast from "./WeatherDailyForecast";
 import axios from "axios";
 
 export default function WeatherForecast(props) {
   const [loaded, setLoaded] = useState(false);
   const [forecastData, setForecastData] = useState(null);
 
-  function getForecastDay(){
-    let day = props.date.getDay();
-    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-    return days[day+1];
-  }
+  useEffect(() => {
+    setLoaded(false);
+  }, [props]);
 
-  function getAPIResponse(response) {
-    console.log(response);
+  function getAPIResponse(response) { debugger;
     setLoaded(true);
-    setForecastData({
-      minTemp: response.data.daily[1].temperature.minimum,
-      maxTemp: response.data.daily[1].temperature.maximum,
-      description: response.data.daily[1].condition.description,
-      forecastIcon: response.data.daily[1].condition.icon,
-    });
+    setForecastData(response.data.daily);
   }
 
   function callAPI() {
@@ -34,23 +26,16 @@ export default function WeatherForecast(props) {
   if (loaded) {
     return (
       <div className="WeatherForecast row">
-        <div className="forecastDays col-2 text-center">
-          <div className="forecastDayName">{getForecastDay()}</div>
-          <WeatherIcon icon={forecastData.forecastIcon} className="m-0" />
-          <div className="forecastTemperature">
-            <span className="forecastTemperature-max">
-              {Math.round(forecastData.maxTemp)}°{" "}
-            </span>
-            -
-            <span className="forecastTemperature-min">
-              {" "}
-              {Math.round(forecastData.minTemp)}°
-            </span>
-          </div>
-          <div className="text-capitalize description">
-            {forecastData.description}
-          </div>
-        </div>
+        {forecastData.map(function (dailyForecast, index) {
+          if (index !== 0 ) {
+            return (
+              <div className="forecastDays col-2 text-center" key={index}>
+                <WeatherDailyForecast data={dailyForecast} />
+              </div>
+            );
+          }
+          return null;
+        })}
       </div>
     );
   } else {
