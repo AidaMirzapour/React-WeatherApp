@@ -1,0 +1,12 @@
+.WeatherDailyForecast .WeatherIcon {
+  width: 80px !important;
+  margin: 0 auto;
+}
+
+.WeatherDailyForecast .forecastTemperature , .forecastDayName{
+    font-size: 15px;
+}
+
+.WeatherDailyForecast .description {
+  font-size: 10px;
+}
