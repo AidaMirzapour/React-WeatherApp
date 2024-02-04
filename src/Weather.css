@@ -45,3 +45,7 @@
   color: var(--basic-blue-color);
   font-size: 14px;
 }
+
+.Weather .locationIcon{
+  cursor: pointer;
+}
