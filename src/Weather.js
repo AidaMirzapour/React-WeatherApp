@@ -59,6 +59,26 @@ export default function Weather(props) {
     setCity(event.target.value);
   }
 
+  function setBackground() {
+    const newDate = new Date();
+    let hour = newDate.getHours();
+    if (5 < hour < 18) {
+      return (
+        <div
+          className="Weather"
+          style={{ backgroundImage: "url(/images/background-day.png)" }}
+        ></div>
+      );
+    } else {
+      return (
+        <div
+          className="Weather"
+          style={{ backgroundImage: "url(/images/background-night.png)" }}
+        ></div>
+      );
+    }
+  }
+  setBackground();
   if (weatherData.ready) {
     return (
       <div className="Weather p-4 mt-5">

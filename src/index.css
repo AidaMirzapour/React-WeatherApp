@@ -8,7 +8,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url(/images/background.jpg);
+  background-image: url(/images/fullpage-bg.png);
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
