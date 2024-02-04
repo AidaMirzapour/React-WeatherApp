@@ -25,7 +25,7 @@ export default function WeatherForecast(props) {
 
   if (loaded) {
     return (
-      <div className="WeatherForecast row">
+      <div className="WeatherForecast row bg-white bg-opacity-10">
         {forecastData.map(function (dailyForecast, index) {
           if (index !== 0) {
             return (
