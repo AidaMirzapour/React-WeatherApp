@@ -1,3 +1,7 @@
+:root {
+  --basic-blue-color: rgb(23, 36, 154);
+}
+
 body {
   margin: 0;
   font-family: Poppins, sans-serif !important;

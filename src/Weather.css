@@ -1,7 +1,3 @@
-:root {
-  --basic-blue-color: rgb(23, 36, 154);
-}
-
 .Weather {
   background-image: url(/images/day-sky.jpg);
   background-repeat: no-repeat;
