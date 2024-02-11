@@ -62,7 +62,7 @@ export default function Weather(props) {
   function setBackground() {
     const newDate = new Date();
     let hour = newDate.getHours();
-    if (5 < hour < 18) {
+    if (hour>5 && hour<18) {
       return (
         <div
           className="Weather"
